@@ -1,6 +1,3 @@
-// Client-side js - runs in browser, makes page interactive
-console.log('Client-side js is loaded');
-
 // Assign variables to DOM elements, so we can use them
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
