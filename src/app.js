@@ -34,14 +34,14 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
   res.render('about', {
-    title: 'About the author',
+    title: 'About',
     name: 'ARSENECA',
   });
 });
 
 app.get('/help', (req, res) => {
   res.render('help', {
-    title: 'Help & FAQs',
+    title: 'Help',
     name: 'ARSENECA',
     helpText: 'This is some really useful text',
   });
@@ -70,12 +70,6 @@ app.get('/weather', (req, res) => {
               });
         }
       );
-});
-
-app.get('/products', (req, res) => {
-  !req.query.search
-    ? res.send({ error: 'You must provide a search term' })
-    : res.send({ products: [`${req.query.search}`] });
 });
 
 app.get('/help/*', (req, res) => {
