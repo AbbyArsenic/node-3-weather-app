@@ -9,7 +9,13 @@ const forecast = (lat, long, callback) => {
       {
         body: {
           error,
-          current: { weather_descriptions, temperature, precip },
+          current: {
+            weather_descriptions,
+            temperature,
+            precip,
+            feelslike,
+            humidity,
+          },
         },
       }
     ) => {
@@ -22,7 +28,7 @@ const forecast = (lat, long, callback) => {
           undefined,
           `${
             weather_descriptions[0]
-          }. It is currently ${temperature}\u00B0F, with ${
+          }. It is currently ${temperature}\u00B0F, and it feels like ${feelslike}\u00B0F. The humidity is ${humidity}%, and there is ${
             precip * 100
           }% chance of rain.`
         );
