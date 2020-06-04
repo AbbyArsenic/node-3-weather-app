@@ -9,7 +9,7 @@ const geocode = require('./utils/geocode');
 const app = express();
 
 // Port environment variable from heroku, OR local 3000
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 // Define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -28,14 +28,14 @@ app.use(express.static(publicDirectoryPath));
 app.get('', (req, res) => {
   res.render('index', {
     title: 'Weather App',
-    name: 'ARSENECA',
+    name: 'ARSENECA'
   });
 });
 
 app.get('/about', (req, res) => {
   res.render('about', {
     title: 'About',
-    name: 'ARSENECA',
+    name: 'ARSENECA'
   });
 });
 
@@ -43,7 +43,7 @@ app.get('/help', (req, res) => {
   res.render('help', {
     title: 'Help',
     name: 'ARSENECA',
-    helpText: 'This is some really useful text',
+    helpText: 'This is some really useful text'
   });
 });
 
@@ -65,7 +65,7 @@ app.get('/weather', (req, res) => {
                       location,
                       latitude,
                       longitude,
-                      forecast: forecastData,
+                      forecast: forecastData
                     });
               });
         }
@@ -76,7 +76,7 @@ app.get('/help/*', (req, res) => {
   res.render('404', {
     title: 'Error: 404',
     name: 'ARSENECA',
-    notFound: 'Help article not found',
+    notFound: 'Help article not found'
   });
 });
 
@@ -84,7 +84,7 @@ app.get('*', (req, res) => {
   res.render('404', {
     title: 'Error: 404',
     name: 'ARSENECA',
-    notFound: 'The page you requested does not exist',
+    notFound: 'The page you requested does not exist'
   });
 });
 
